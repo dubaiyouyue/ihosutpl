@@ -1,0 +1,97 @@
+
+<div class="centent">
+  <div class="tacn mt40"><img src="/images/pro_title.jpg" width="349" height="69" /></div>
+  <div class="pt50 pro_cn">
+  
+  <foreach name="list" item="r" key="k" >
+    <?php
+		if(!($k%2)){
+	?><div class="pb40 ofauto">
+      <a href="/index.php/Home/Productshow/index/cid/{$cid}/id/{$r.id}.html"><div class="pro_pic1 fl"><img src="{$r.imgurl}" width="246" height="357" /></div>
+      <div class="fl">
+        <div class="ls8 fcfff tar mt50"><b>TOPSPEED RISES HOPE</b></div>
+        <div class="pro_txt" style="
+    overflow: hidden;
+">
+          <div class="ls3 fs20 bold fcfff" style="
+    overflow: hidden;height:25px;
+    line-height: 25px;
+">{$r.title}</div>
+          <div class="fs16 lh30 mt25">{$r.description}</div>
+        </div>
+      </div>
+      <div class="pro_icon fl" style="margin-left:575px;">→</div></a>
+    </div>
+	<?php
+		}else{
+	?>
+	
+     <div class="pb40 ofauto">
+      <a href="/index.php/Home/Productshow/index/cid/{$cid}/id/{$r.id}.html">
+      <div class="pro_pic1 fr"><img src="{$r.imgurl}" width="246" height="357" /></div>
+      <div class="fr">
+        <div class="ls8 fcfff mt50"><b>TOPSPEED RISES HOPE</b></div>
+        <div class="pro_txt" style="
+    overflow: hidden;
+">
+          <div class="ls3 fs20 bold fcfff" style="
+    overflow: hidden;
+	height:25px;
+    line-height: 25px;
+">{$r.title}</div>
+          <div class="fs16 lh30 mt25">{$r.description}</div>
+        </div>
+      </div>
+      <div class="pro_icon fl" style="">←</div>
+      
+      </a>
+    </div>
+		<?php
+		}
+	?>
+	
+     </foreach>
+	<style>.aadasdasd a,.aadasdasd span{margin-right:6px;}.aadasdasd a span{margin-right:0px;}</style>
+    <div class="clear h30 bgc27 page pt20 tacn aadasdasd" style="<?php
+		if($allpage<2) echo 'display:none;';
+	?>">
+       <a href="/index.php/Home/{$foldername}/index/cid/{$cid}/p/<?php
+	   if(!$p) $p=1;
+		$newp=$p-1;
+		if($newp<1) $newp=1;
+		echo $newp;
+		$pimgss=($p%4);
+	   ?>.html"><span><img src="/images/prev.jpg" width="11" height="20" /></span></a>
+       <span><img src="/images/<?php
+		if($pimgss==1 || $p<2) echo 'on';
+		else echo 'li';
+	   ?>.jpg" width="11" height="20" /></span>
+       <span style="<?php
+			if($allpage<2) echo 'display:none;';
+	   ?>"><img src="/images/<?php
+		if($pimgss==2) echo 'on';
+		else echo 'li';
+	   ?>.jpg" width="11" height="20" /></span>
+       <span style="<?php
+			if($allpage<3) echo 'display:none;';
+	   ?>"><img src="/images/<?php
+		if($pimgss==3) echo 'on';
+		else echo 'li';
+	   ?>.jpg" width="11" height="20" /></span>
+       <span style="<?php
+			if($allpage<4) echo 'display:none;';
+	   ?>"><img src="/images/<?php
+		if($pimgss==0 &&  $p>1) echo 'on';
+		else echo 'li';
+	   ?>.jpg" width="11" height="20" /></span>
+       <a href="/index.php/Home/{$foldername}/index/cid/{$cid}/p/<?php 
+		$newp=$p+1;
+		if($newp>$allpage) $newp=$allpage;
+		echo $newp;
+	   ?>.html"><span><img src="/images/next.jpg" width="11" height="20" /></span></a>
+    </div>
+	
+  </div>
+</div>
+
+<div class="tacn pt100 pb20 clear"><a href="{$lxwmurl}"><img src="/images/con_icon.jpg" width="220" height="50" /></a></div>

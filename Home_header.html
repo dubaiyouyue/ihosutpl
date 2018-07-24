@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Conten t-Type" content="text/html; charset=utf-8" />
+<title>{$seo_title}</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+
+<?php
+//dump($new_column_list_top);exit;
+$lxwmurl='/index.php/Home/Contact/index/cid/401.html';
+?>
+
+<div class="h135">
+  <div class="centent h135">
+    <div class="fl mt25"><img src="{$config_info.gz_logo}" width="204" height="76" /></div>
+    <div class="fr pt25 fs16">
+      <b class="fcred fr mb15 mr15">CALL : {$config_info.gz_footteldianhua}</b>
+      <div class="menu clear">
+                 <ul>
+				 <a href="/" class="<?php
+        if($cid==0) echo 'menu_on';
+
+      ?>"><li ><span>HOME</span>网站首页</li></a>
+				 <foreach name="new_column_list_top" item="r" key="k" >
+				 <a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html" class="<?php
+        if($foldername==$r['foldername']) echo 'menu_on';
+      ?>"><li><span>{$r.enname}</span>{$r.name}</li></a>
+				 </foreach>
+				 
+                 </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sub_banner" style="height:416px; background:url({$blist.img_path}) no-repeat center;"></div>
+
+<div class="line1"></div>

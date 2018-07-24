@@ -1,0 +1,107 @@
+<style>
+#ddbbbsewwsssm{ position: absolute;
+    right: 59px;
+    top: -56px;display:none;}
+</style>
+<div class="centent  pt40 h90" >
+  <div class="fl "><img src="{$config_info.gz_logo}" width="204" height="76" /></div>
+  <div class="fl mt25 fs12 tacn ml120">
+    <p>CALL : {$config_info.gz_footteldianhua}      </p>
+    <p>Design  By  <a href="http://www.resonance.com.cn/" target="_blank" class="fce6">南宁共振广告 </a></p>
+  </div>
+  <div class="fr tar">
+    <div class="mt5" style="
+    position: relative;
+">
+      <span class="mr10"><a href="javascript:;" onclick="$('#ddbbbsewwsssm').fadeToggle();"><img src="/images/CORD.jpg" id="qqimgkefuzaxiiCORD" width="22" height="23" /></a></span>
+	  <img src="{$config_info.gz_ewm}" id="ddbbbsewwsssm" />
+      <span><a href="http://wpa.qq.com/msgrd?v=3&uin={$config_info.gz_footteldianhua2qq}" target="_blank" ><img id="qqimgkefuzaxii" src="/images/QQ.jpg" width="22" height="23" /></a></span>
+    </div>
+    <div class="fs12">
+      <p>{$config_info.gz_footright}</p>
+      <p>{$config_info.gz_foottel}  &nbsp;&nbsp;ADRESS : {$config_info.gz_headeryj} </p>
+    </div>
+</div
+></div>
+
+
+<!--返回顶部 代码 开始 -->
+<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+<script type="text/javascript">
+$(function(){	
+	$(window).scroll(function() {		
+		if($(window).scrollTop() >= 100){ //向下滚动像素大于这个值时，即出现小火箭~
+			$('.actGotop').fadeIn(300); //火箭淡入的时间，越小出现的越快~
+		}else{    
+			$('.actGotop').fadeOut(300); //火箭淡出的时间，越小消失的越快~
+		}  
+	});
+	$('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);}); //火箭动画停留时间，越小消失的越快~
+});
+
+</script>
+<!--返回顶部 代码 结束 -->
+
+
+<script>  /*异步加载 - 在线交流 - 站长统计 */
+  var gz_weburl='/';
+  var lang='cn';
+  var classnow='{$cid}';
+  var id='<?php echo $_GET['id'];?>';
+  
+  var url=gz_weburl+'include/interface/uidata.php?lang='+lang,h = '<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>';
+  
+  if(h.indexOf("preview=1")!=-1)url = url + '&theme_preview=1';
+  $.ajax({
+    type: "POST",
+    url: url,
+    dataType:"json",
+    success: function(msg){
+      var c = msg.config;
+      
+      if(c.gz_stat==1){       //站长统计
+        var navurl=classnow==10001?'':'../';
+        var stat_d=classnow+'-'+id+'-'+lang;
+        var url = gz_weburl+'include/stat/stat.php?type=para&u='+navurl+'&d='+stat_d;
+        $.getScript(url);
+      }
+    }
+  });
+    //var metClicks = $(".metClicks");//点击次数
+    var ClicksListnow='<?php echo $_GET['id'];?>';
+    var weburl='/';
+    if(ClicksListnow){
+      //var DataClicks = metClicks.data("metclicks");
+      //ClicksStr=DataClicks.split("|"); 
+      var ClicksModule = 'news';//ClicksStr[0],ClicksListnow = ClicksStr[1];
+      var urlw = weburl+'include/hits.php?type='+ClicksModule+'&id='+ClicksListnow;
+      $.ajax({
+        type: "POST",
+        url: urlw,
+        dataType:"text",
+        success: function(msg){
+          //var t = msg.split('"');
+          //metClicks.html(t[1]);
+        }
+      });
+    }
+</script>
+<img src="/QQ_red.jpg" style="display:none;">
+<img src="/CORD_red.jpg" style="display:none;">
+<script>
+			 $("#qqimgkefuzaxii").mouseover(function(){
+  $(this).attr('src','/QQ_red.jpg');
+});$("#qqimgkefuzaxii").mouseout(function(){
+  $(this).attr('src','/images/QQ.jpg');
+});
+
+			 $("#qqimgkefuzaxiiCORD").mouseover(function(){
+  $(this).attr('src','/CORD_red.jpg');
+});$("#qqimgkefuzaxiiCORD").mouseout(function(){
+  $(this).attr('src','/images/CORD.jpg');
+});
+
+
+			 </script>
+</body>
+</html>

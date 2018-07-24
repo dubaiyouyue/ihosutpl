@@ -1,0 +1,27 @@
+
+
+<div class="centent">
+  <div class="tacn mt40"><img src="/images/about_title.jpg" width="258" height="78" /></div>
+  <div class="tacn mt40 pb40"><img src="/images/speedy1.jpg" width="726" height="157" /></div>
+  
+  
+  
+  
+  <foreach name="lanmu" item="r" key="k" >
+  <?php
+	$newwstt=mb_substr($r['name'],2,4,'utf-8');
+	$r['name']=str_ireplace($newwstt,'<span class="fcred">'.$newwstt.'</span>',$r['name']);
+  ?>
+  <div class="tacn fs20 fcfff bold mt80">{$r.name}&nbsp; {$r.enname}</div>
+  <div class="line2"></div>
+  <div class="">
+   {$r.content}
+</div>
+</foreach>
+
+
+
+
+</div>
+
+<div class="tacn pt100 pb20"><a href="{$lxwmurl}"><img src="/images/con_icon.jpg" width="220" height="50" /></a></div>

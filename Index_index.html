@@ -1,0 +1,428 @@
+{__NOLAYOUT__}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>{$seo_title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">    
+		
+		<volist name="blist" id="v" key="k">
+ 
+ <div class="swiper-slide"><a href="{$v.img_link}"><img src="{$v.img_path}" width="100%" /></a></div>
+</volist>
+            
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+		loop : true,
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+		onSlideChangeStart: function(swiper){
+      //alert(swiper.activeIndex);
+	  //console.log(swiper.activeIndex);
+			var newwwssnummall=parseInt('{$k}');
+			//$('#Namb_onnewwwssnummall').text('0'+newwwssnummall);
+			var newwwssnumm=swiper.activeIndex;
+			if(newwwssnumm<1 || !newwwssnumm){
+				newwwssnumm='03';
+			}else{
+				if(newwwssnumm>newwwssnummall) newwwssnumm='01';//+newwwssnummall;
+				else if(newwwssnumm<10) newwwssnumm='0'+newwwssnumm;
+			}
+			$('#Namb_on').text(newwwssnumm);
+    }
+    });
+    </script>
+
+ <div id="banner_top">
+
+<div class="no1_left">
+       <div class="LOGO">
+         <div><img src="images/logo.jpg" width="203" height="76" /></div>
+         <div class="banner_nab">
+           <div class="banner_nab_on" id="Namb_on">01</div><!--------数字随banner滚动更变---------->
+           <div class="banner_nab_all">/&nbsp;0{$k}</div><!--------显示banner总数---------->
+         </div>
+       </div>
+       <div class="speedy_icon"></div>
+	   
+	   <div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+	   </div>
+	   
+                         <div class="no1_icon">
+                   <p><a href="http://wpa.qq.com/msgrd?v=3&uin={$config_info.gz_footteldianhua2qq}" target="_blank" ><img id="qqimgkefuzaxiitop" src="images/QQ.jpg" width="22" height="23" /></a></p>
+                   <p><img id="qqimgkefuzaxiiCORDtop" src="images/CORD.jpg" width="22" height="23" style="
+    cursor: pointer;
+" /></p><img src="{$config_info.gz_ewm}" id="ddbbbsewwsssmtop" style="
+    position: absolute;
+    left: -23px;
+    top: -86px;
+    display: none;
+" />
+                   <!--<p><img src="images/copyright.jpg" width="22" height="23" /></p>-->
+                 </div>
+           </div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+		loop : true,
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+		onSlideChangeStart: function(swiper){
+      //alert(swiper.activeIndex);
+	  //console.log(swiper.activeIndex);
+			var newwwssnummall=parseInt('{$k}');
+			//$('#Namb_onnewwwssnummall').text('0'+newwwssnummall);
+			var newwwssnumm=swiper.activeIndex;
+			if(newwwssnumm<1 || !newwwssnumm){
+				newwwssnumm='03';
+			}else{
+				if(newwwssnumm>newwwssnummall) newwwssnumm='01';//+newwwssnummall;
+				else if(newwwssnumm<10) newwwssnumm='0'+newwwssnumm;
+			}
+			$('#Namb_on').text(newwwssnumm);
+    },
+		autoplay: 3000
+    });
+    </script>
+    <div class="call">CALL : {$config_info.gz_footteldianhua}</div>
+    <div class="menu" style="position:absolute; right:10px; top:30px; ">
+                <ul>
+                   <a href="/" class="<?php
+        if($cid==0) echo 'menu_on';
+
+      ?>"><li ><span>HOME</span>网站首页</li></a>
+				 <foreach name="new_column_list_top" item="r" key="k" >
+				 <a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html" class="<?php
+        if($foldername==$r['foldername']) echo 'menu_on';
+      ?>"><li><span>{$r.enname}</span>{$r.name}</li></a>
+				 </foreach>
+                 </ul>
+   </div>
+   
+   
+ </div>
+<div class="line1"></div>
+
+<div class="line_bg" style="height:auto; overflow:auto;">   
+   
+ <div class="swiper-slide" style="background:url(images/about_bg.jpg) no-repeat 10% 40%;">
+              <div class="line_bg" style="height:100%">
+            
+                <div class="tacn mt10b"><a href="/index.php/Home/About/index/cid/314.html"><img src="images/about_title.jpg" width="258" height="78" /></a></div>
+                <div class="about_con">
+                  <div class="about_one">
+                    <div class="fs20 bold fcfff mt40">关于<span class="fcred">火速</span>&nbsp;&nbsp;About Speedy .</div>
+                    <a href="/index.php/Home/About/index/cid/314.html"><div class="fs16 mt50 lh28">{$newaboust.318.description}</div></a>
+                  </div>
+                  <div class="about_two">
+                    <div class="fs20 bold fcfff mt40">文化<span class="fcred">理念</span>&nbsp;&nbsp;Cultural Idea</div>
+                    <a href="/index.php/Home/About/index/cid/314.html">{$newaboust.317.description}</a>
+                  </div>
+                  <div class="about_three"><a href="/index.php/Home/About/index/cid/314.html">{$newaboust.315.description}</a></div>
+                </div>
+                
+</div>
+            </div>      
+  
+  <div id="Project" class="clear">
+    <div class="tacn pt100"><a href="/index.php/Home/Product/index/cid/451.html"><img src="images/pro_title.jpg" width="349" height="69" /></a></div>
+                 <div class="pro_con">
+				  <foreach name="product" item="r" key="k" >
+				 
+                   <a href="/index.php/Home/Productshow/index/cid/{$r.class1}/id/{$r.id}.html"><div class="pro_pic"><div class="pro_pic_bk"><p class="tacn pt50" style="
+    /*height: 24px;
+    line-height: 24px;
+    overflow: hidden;*/    padding:50px 25px 0;
+">{$r.title}</p><p class="speedy2"><img src="images/speedy2.fw.png" width="12" height="330" /></p></div><img src="{$r.imgurl}" width="100%" /></div></a>
+                   </foreach>
+				   
+                 </div>
+  </div>
+    
+    <div id="News"  style="background:url(images/news_bg.jpg) no-repeat 95% 50px;">
+      <div class="tacn mt110 "><a href="/index.php/Home/Trends/index/cid/140.html"><img src="images/news_title.jpg" width="323" height="69" /></a></div>
+                <div class="news_cn" >
+      <foreach name="newss" item="r" key="k" >
+      <a href="/index.php/Home/Newsshow/index/cid/{$r.class2}/id/{$r.id}.html"><div class="news_list">
+      <div class="h310 ofhd">
+        <div class="mt25 fcfff fs18 ml10" style="
+    height: 25px;
+    line-height: 24px;
+    overflow: hidden;
+">{$r.title}</div><div class="ml10 fs12 fc64 lh45">{$r.updatetime}</div>
+        <div class="ml10 fs12 fc64 lh45">{$list.updatetime}</div>
+        <div class="mb10"><img src="{$r.imgurl}" width="350" height="110" /></div>
+        <div class="">{$r.description}</div>
+      </div>
+      <div class="fcred mt50"><SPAN class="ml160">- MORE -</SPAN></div>
+      </div></a>
+	  </foreach>
+    </div>
+    <a href="/index.php/Home/Trends/index/cid/140.html"><div class="tacn mt50"><img src="images/more1.jpg" width="250" height="50" /></div></a>
+    </div>
+
+<div id="Contact"  style="background:url(images/contact_bg.jpg) no-repeat 0 70px;">
+    <div class="tacn mt110"><a href="/index.php/Home/Contact/index/cid/401.html"><img src="images/con_title.jpg" width="284" height="69" /></a></div>
+             <div class="con_cn">
+               <div class="con_cn">
+                 <div class="con_cn_add">
+                   <p>CALL : {$config_info.gz_footteldianhua}</p>
+                   <?php if($config_info['gz_footteldianhuazzz']){?><p>FAX : {$config_info.gz_footteldianhuazzz}</p><?php }?>
+                   <p>EMAIL : {$config_info.gz_foottel}</p>
+                   <p>ADRESS : {$config_info.gz_headeryj}</p>
+                 </div>
+				 
+				 
+				 
+                 <div class="mt25 fl" style="height:215px" ><form name="myform" id="myform" method="POST" class="clearUl" action="">
+                   <div class="fl " style="width:520px;">
+                     <div class="tex_input">Name
+                       <input class="tex_input_1 " type="text" name="name" id="name" />
+                     </div>
+                     <div class="tex_input">Phone
+                       <input class="tex_input_1 " style="width:165px;" type="text" name="tel" id="tel" />
+                     </div>
+					 
+                     <div class="tex_input">Email *
+                       <input class="tex_input_1 " style="width:160px;" type="text" name="email" id="email" />
+                     </div>
+                     <div class="tex_input">Company
+                       <input class="tex_input_1 " style="width:140px;" type="text" name="company" id="company" />
+                     </div>
+                   </div>
+                   <div class="fl" style="width:240px;">
+                     <div class="sub_message fcfff fs16">
+                       <p class="pt10 ml10">Message</p>
+                       <p>
+                         <textarea name="message" id="message" class="sub_message_txt"></textarea>
+                       </p>
+                     </div>
+                   </div>
+				   
+				   </form>
+				   
+                   <div class="tar pt15 clear">
+                     <button style="background:url(images/send.jpg); width:140px; height:50px;cursor: pointer;" onclick="xxpd();"></button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+               <div class="footer fs12" style="    min-height: 78px;
+    overflow: unset;">
+                 <div class="fl "><img src="images/logo.png" width="204" height="76" /></div>
+                 <div class="fr tar">
+                       <div class="mt5" style="
+    position: relative;
+">
+      <span class="mr10"><a href="javascript:;"><img src="/images/CORD.jpg" id="qqimgkefuzaxiiCORD" width="22" height="23" /></a></span>
+	  <img src="{$config_info.gz_ewm}" id="ddbbbsewwsssm" style="position: absolute;
+    right: 59px;
+    top: -56px;display:none;" />
+      <span><a href="http://wpa.qq.com/msgrd?v=3&uin={$config_info.gz_footteldianhua2qq}" target="_blank" ><img id="qqimgkefuzaxii" src="/images/QQ.jpg" width="22" height="23" /></a></span>
+    </div>
+	
+	
+
+		 
+	
+    <div class="fs12">
+      <p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=45010702000803" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/beian.png" style="float:left;"/>桂公网安备 45010702000803号</a> 桂ICP备17010981号-1 {$config_info.gz_footright}</p>
+      <p>{$config_info.gz_foottel}  &nbsp;&nbsp;ADRESS : {$config_info.gz_headeryj}.Design  By  <a href="http://www.resonance.com.cn/" target="_blank" class="fce6">南宁共振广告</a></p>
+    </div>
+
+             </div>
+  </div>  
+</div>
+    
+</div>
+<!--返回顶部 代码 开始 -->
+<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+<script type="text/javascript">
+$(function(){	
+	$(window).scroll(function() {		
+		if($(window).scrollTop() >= 100){ //向下滚动像素大于这个值时，即出现小火箭~
+			$('.actGotop').fadeIn(300); //火箭淡入的时间，越小出现的越快~
+		}else{    
+			$('.actGotop').fadeOut(300); //火箭淡出的时间，越小消失的越快~
+		}  
+	});
+	$('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);}); //火箭动画停留时间，越小消失的越快~
+});
+
+</script><script>
+function  xxpd(){
+		var name=$('#name').val();
+		var email=$('#email').val();
+		var telephone=$('#tel').val();
+		var company=$('#company').val();
+		var message=$('#message').val();
+		
+		if(!name){
+			alert('请填写姓名');
+			document.getElementById('name').focus();
+			return false;
+		}
+		if(!youxiang('email') || !email){
+			alert('请填写正确邮箱');
+			document.getElementById('email').focus();
+			return false;
+		}
+		if(!telephone || (telephone.length!=7 && telephone.length!=11) || isNaN(telephone)){
+			alert('请填写正确手机号');
+			document.getElementById('tel').focus();
+			return false;
+		}
+		if(!company){
+			alert('请填写公司');
+			document.getElementById('company').focus();
+			return false;
+		}
+		if(!message){
+			alert('请填写留言');
+			document.getElementById('message').focus();
+			return false;
+		}
+		//document.getElementById('myform').submit();
+		
+			$.ajax({
+				type: "POST",
+				url:'/index.php?g=User&m=Post&a=Message&ajax=ajax',
+				data:$('#myform').serialize(),
+				error: function(request) {
+					alert("提交失败");
+				},
+				success: function(data) {
+					if(data>0){
+						alert('留言提交成功！');
+						location.reload();
+					}else alert("提交失败");
+					
+				}
+			});
+		
+		
+	}
+		function  youxiang(n){
+		
+		var email = document.getElementById(n).value;
+		
+		//alert(email);
+		
+		//return false;
+		
+            if (email != "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                isok= reg.test(email );
+                if (!isok) {
+                    return false;
+                }
+				else return true;
+            }
+		}		
+</script>
+<!--返回顶部 代码 结束 -->
+<img src="/QQ_red.jpg" style="display:none;">
+<img src="/CORD_red.jpg" style="display:none;">
+<script>
+			 $("#qqimgkefuzaxii").mouseover(function(){
+  $(this).attr('src','/QQ_red.jpg');
+});$("#qqimgkefuzaxii").mouseout(function(){
+  $(this).attr('src','/images/QQ.jpg');
+});
+
+			 $("#qqimgkefuzaxiiCORD").mouseover(function(){
+  $(this).attr('src','/CORD_red.jpg'); $('#ddbbbsewwsssm').show();
+});$("#qqimgkefuzaxiiCORD").mouseout(function(){
+  $(this).attr('src','/images/CORD.jpg');$('#ddbbbsewwsssm').hide();
+});
+			 $("#qqimgkefuzaxiitop").mouseover(function(){
+  $(this).attr('src','/QQ_red.jpg');
+});$("#qqimgkefuzaxiitop").mouseout(function(){
+  $(this).attr('src','/images/QQ.jpg');
+});
+
+			 $("#qqimgkefuzaxiiCORDtop").mouseover(function(){
+  $(this).attr('src','/CORD_red.jpg');$('#ddbbbsewwsssmtop').show();
+});$("#qqimgkefuzaxiiCORDtop").mouseout(function(){
+  $(this).attr('src','/images/CORD.jpg');$('#ddbbbsewwsssmtop').hide();
+});
+
+			 </script>
+			 
+
+<script>  /*异步加载 - 在线交流 - 站长统计 */
+  var gz_weburl='/';
+  var lang='cn';
+  var classnow='{$cid}';
+  var id='<?php echo $_GET['id'];?>';
+  
+  var url=gz_weburl+'include/interface/uidata.php?lang='+lang,h = '<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>';
+  
+  if(h.indexOf("preview=1")!=-1)url = url + '&theme_preview=1';
+  $.ajax({
+    type: "POST",
+    url: url,
+    dataType:"json",
+    success: function(msg){
+      var c = msg.config;
+      
+      if(c.gz_stat==1){       //站长统计
+        var navurl=classnow==10001?'':'../';
+        var stat_d=classnow+'-'+id+'-'+lang;
+        var url = gz_weburl+'include/stat/stat.php?type=para&u='+navurl+'&d='+stat_d;
+        $.getScript(url);
+      }
+    }
+  });
+    //var metClicks = $(".metClicks");//点击次数
+    var ClicksListnow='<?php echo $_GET['id'];?>';
+    var weburl='/';
+    if(ClicksListnow){
+      //var DataClicks = metClicks.data("metclicks");
+      //ClicksStr=DataClicks.split("|"); 
+      var ClicksModule = 'news';//ClicksStr[0],ClicksListnow = ClicksStr[1];
+      var urlw = weburl+'include/hits.php?type='+ClicksModule+'&id='+ClicksListnow;
+      $.ajax({
+        type: "POST",
+        url: urlw,
+        dataType:"text",
+        success: function(msg){
+          //var t = msg.split('"');
+          //metClicks.html(t[1]);
+        }
+      });
+    }
+</script>
+			 
+			 
+</body>
+</html>
+
